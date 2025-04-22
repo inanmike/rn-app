@@ -8,6 +8,7 @@ import useFetch from '@/services/useFetch'
 import { fetchMovies } from '@/services/api'
 import MovieCard from '@/components/MovieCard'
 import { getTrendingMovies } from '@/services/appwrite'
+import TrendingCard from '@/components/TrendingCard'
 
 const Index = () => {
 
@@ -54,9 +55,12 @@ const Index = () => {
               <Text className='text-lg text-white font-bold mb-3'>Trending Movies</Text> 
 
               <FlatList
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                ItemSeparatorComponent={() => <View className='w-4'/>}
                 data={trendingMovies}
                 renderItem={({item, index}) => (
-                  <Text className='text-white text-sm'>{item.title}</Text>
+                  <TrendingCard movie={item} index={index}/>
                 )}
                 className='mb-4 mt-3'
                 keyExtractor={(item) => item.movie_id.toString()}
