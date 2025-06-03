@@ -54,13 +54,24 @@ const Details = () => {
             resizeMode="stretch"
           />
 
-          <TouchableOpacity className="absolute bottom-5 right-5 rounded-full size-14 bg-white flex items-center justify-center">
-            <Image
-              source={icons.play}
-              className="w-6 h-7 ml-1"
-              resizeMode="stretch"
-            />
-          </TouchableOpacity>
+          <View className="absolute bottom-5 left-0 right-0 px-5 flex-row justify-between items-center">
+            <TouchableOpacity>
+              <Image
+                source={icons.star}
+                className="w-6 h-6"
+                resizeMode="contain"
+              />
+            </TouchableOpacity>
+
+            <TouchableOpacity className="rounded-full size-14 bg-white flex items-center justify-center">
+              <Image
+                source={icons.play}
+                className="w-6 h-6"
+                resizeMode="contain"
+              />
+            </TouchableOpacity>
+          </View>
+
         </View>
 
         <View className="flex-col items-start justify-center mt-5 px-5">

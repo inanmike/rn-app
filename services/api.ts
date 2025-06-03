@@ -43,4 +43,29 @@ export const fetchMovieDetails = async (movieId : string): Promise<MovieDetails>
     }
 }
 
+export const fetchMovieVideos = async (id: string): Promise<string | null> => {
+    try {
+      const res = await fetch(
+        `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${process.env.EXPO_PUBLIC_TMDB_API_KEY}`
+      );
+  
+      if (!res.ok) {
+        throw new Error("Failed to fetch movie videos");
+      }
+  
+      const data = await res.json();
+      const videos = data.results;
+  
+      const trailer = videos.find(
+        (v: any) => v.site === "YouTube" && v.type === "Trailer"
+      );
+  
+      return trailer?.key || null;
+    } catch (error) {
+      console.error("Video fetch error:", error);
+      return null;
+    }
+  };
+  
+
 // /DİSCOVER/MOVİE
