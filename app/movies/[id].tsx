@@ -12,6 +12,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { icons } from "@/constants/icons";
 import useFetch from "@/services/useFetch";
 import { fetchMovieDetails } from "@/services/api";
+import FavButton from '@/components/FavButton';
+import WatchedButton from '@/components/WatchedButton';
 
 interface MovieInfoProps {
   label: string;
@@ -55,14 +57,8 @@ const Details = () => {
           />
 
           <View className="absolute bottom-5 left-0 right-0 px-5 flex-row justify-between items-center">
-            <TouchableOpacity>
-              <Image
-                source={icons.star}
-                className="w-6 h-6"
-                resizeMode="contain"
-              />
-            </TouchableOpacity>
-
+            {movie && <FavButton movie={movie} query={'main'} />}
+            {movie && <WatchedButton movie={movie} />}
             <TouchableOpacity className="rounded-full size-14 bg-white flex items-center justify-center">
               <Image
                 source={icons.play}

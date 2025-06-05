@@ -33,7 +33,7 @@ const Register = ({ onRegisterSuccess }: { onRegisterSuccess: () => void }) => {
         value={email}
         onChangeText={setEmail}
         placeholderTextColor="white"
-        style={{ color: 'white' }}
+        style={{ color: 'white', width:250, height:50}}
       />
       <TextInput
         className="p-2 my-3 border-2 border-white rounded-md focus:border-purple-600"
@@ -42,7 +42,7 @@ const Register = ({ onRegisterSuccess }: { onRegisterSuccess: () => void }) => {
         value={password}
         onChangeText={setPassword}
         placeholderTextColor="white"
-        style={{ color: 'white' }}
+        style={{ color: 'white', width:250, height:50}}
       />
       <Button title="Register" onPress={handleRegister} color="#8B5CF6" />
     </View>

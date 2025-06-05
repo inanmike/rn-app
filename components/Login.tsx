@@ -23,8 +23,8 @@ const Login = ({ onLoginSuccess }: { onLoginSuccess: () => void }) => {
         placeholder="Email"
         value={email}
         onChangeText={setEmail}
-        placeholderTextColor="white" // Placeholder yazısı beyaz olacak
-        style={{ color: 'white' }} // Text input metin rengi beyaz olacak
+        placeholderTextColor="white" 
+        style={{ color: 'white', width:250, height:50}}
       />
       <TextInput
         className="p-2 my-3 border-2 border-white rounded-md focus:border-purple-600"
@@ -32,8 +32,8 @@ const Login = ({ onLoginSuccess }: { onLoginSuccess: () => void }) => {
         secureTextEntry
         value={password}
         onChangeText={setPassword}
-        placeholderTextColor="white" // Placeholder yazısı beyaz olacak
-        style={{ color: 'white' }} // Text input metin rengi beyaz olacak
+        placeholderTextColor="white" 
+        style={{ color: 'white', width:250, height:50}}
       />
       <Button title="Login" onPress={handleLogin} color="#8B5CF6" /> {/* Buton rengi mor */}
     </View>
